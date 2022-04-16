@@ -35,11 +35,11 @@ class HelloTest {
     @Test
     fun terminal(){
         val x = TerminalWork()
-        assertThrows(IllegalArgumentException::class.java){x.getDistribution(arrayOf("-c","zz","test.txt"))}
-        assertThrows(IllegalArgumentException::class.java){x.getDistribution(arrayOf("-c","","test.txt"))}
-        assertThrows(IllegalArgumentException::class.java){x.getDistribution(arrayOf("-c","!","test.txt"))}
-        assertThrows(IllegalArgumentException::class.java){x.getDistribution(arrayOf("-d","abz","test.txt"))}
-        assertThrows(IllegalArgumentException::class.java){x.getDistribution(arrayOf("-d","","test.txt"))}
-        assertThrows(FileNotFoundException::class.java){x.getDistribution(arrayOf("-c","abc","notTest.txt"))}
+        assertThrows(IllegalArgumentException::class.java){x.getDistribut(arrayOf("-c","zz","test.txt"))}
+        assertThrows(IllegalArgumentException::class.java){x.getDistribut(arrayOf("-c","","test.txt"))}
+        assertThrows(IllegalArgumentException::class.java){x.getDistribut(arrayOf("-c","!","test.txt"))}
+        assertThrows(IllegalArgumentException::class.java){x.getDistribut(arrayOf("-d","abz","test.txt"))}
+        assertThrows(IllegalArgumentException::class.java){x.getDistribut(arrayOf("-d","","test.txt"))}
+        assertThrows(FileNotFoundException::class.java){x.getDistribut(arrayOf("-c","abc","notTest.txt"))}
     }
 }

@@ -5,23 +5,23 @@ import org.kohsuke.args4j.Option
 import org.kohsuke.args4j.CmdLineParser
 
 fun main(args: Array<String>) {
-    TerminalWork().getDistribution(args)
+    TerminalWork().getDistribut(args)
 }
 
 class TerminalWork {
     @Option(name = "-c", forbids = ["-d"], metaVar = "Encryption", usage = "encryption key")
-    private var encryptionKey: String = ""
+    private var encryptionKey = ""
 
     @Option(name = "-d", forbids = ["-c"], metaVar = "Decryption", usage = "decryption key")
-    private var decryptionKey: String = ""
+    private var decryptionKey = ""
 
     @Argument(metaVar = "InputName", usage = "Intput File name", required = true)
-    private var inputName: String = ""
+    private var inputName = ""
 
     @Option(name = "-o", metaVar = "OutputName", usage = "Output File name")
-    private var outputName: String = ""
+    private var outputName = ""
 
-    private fun argumentsDistribution(args: Array<String>) {
+    private fun argumentsDistribut(args: Array<String>) {
         val parser = CmdLineParser(this)
         val suffix: String
         val key: String
@@ -47,8 +47,9 @@ class TerminalWork {
             throw IllegalArgumentException()
         }
     }
-    fun getDistribution(args: Array<String>){
-        argumentsDistribution(args)
+
+    fun getDistribut(args: Array<String>) {
+        argumentsDistribut(args)
     }
 
     private fun workWithKey(key: String): String {
@@ -59,7 +60,7 @@ class TerminalWork {
         return result
     }
 
-    fun getWorkWithKey(key: String):String{
+    fun getWorkWithKey(key: String): String {
         return workWithKey(key)
     }
 }
